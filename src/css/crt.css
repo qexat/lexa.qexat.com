@@ -1,0 +1,57 @@
+:root {
+  --crt-line-height: 4px;
+}
+
+@keyframes LineMoving {
+  0% {
+    background-position-y: 0px;
+  }
+
+  100% {
+    background-position-y: var(--crt-line-height);
+  }
+}
+
+@keyframes Blink {
+  0% {
+    filter: brightness(100%);
+  }
+
+  50% {
+    filter: brightness(95%);
+  }
+
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  body {
+    background: linear-gradient(
+      180deg,
+      var(--pink-flamingo-lighter),
+      #ffffff,
+      var(--pink-flamingo-lighter)
+    );
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(
+      180deg,
+      var(--pink-flamingo-darker),
+      #000000,
+      var(--pink-flamingo-darker)
+    );
+  }
+}
+
+body {
+  background-size: 100% var(--crt-line-height) !important;
+  background-repeat: repeat-y !important;
+  backdrop-filter: blur(1px);
+  text-shadow: 0 0 1.5px
+    light-dark(var(--pink-flamingo-darker), var(--pink-flamingo-lighter));
+}

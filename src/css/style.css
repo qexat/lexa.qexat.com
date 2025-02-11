@@ -1,0 +1,130 @@
+@import url("./colors.css");
+@import url("https://fonts.bunny.net/css?family=fragment-mono:400");
+
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: inherit;
+  animation-composition: accumulate;
+}
+
+html,
+body {
+  margin: 0 auto;
+  height: 100%;
+}
+
+body {
+  background-color: light-dark(
+    var(--pink-flamingo-lightest),
+    var(--pink-flamingo-darkest)
+  );
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+main {
+  width: 50%;
+  padding: 50px;
+}
+
+a,
+code,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  font-family: "Fragment Mono", monospace;
+}
+
+h1 {
+  color: light-dark(var(--pink-flamingo-dark), var(--pink-flamingo));
+}
+
+code {
+  color: light-dark(var(--pink-flamingo-darker), var(--pink-flamingo-lighter));
+  border: 1px solid var(--gray-dark);
+  padding: 0 2px;
+  border-radius: 4px;
+}
+
+em {
+  color: light-dark(var(--pink-flamingo-dark), var(--pink-flamingo-light));
+}
+
+li {
+  line-height: 1.5;
+}
+
+a {
+  color: light-dark(var(--azure-capri-dark), var(--azure-maya));
+}
+
+a:visited {
+  color: light-dark(var(--violet-mauve-dark), var(--violet-lavender));
+}
+
+a:hover {
+  background-color: light-dark(
+    var(--pink-flamingo-lightest),
+    var(--pink-begonia-darkest)
+  );
+  color: light-dark(var(--pink-fuschia-darkest), var(--pink-flamingo-lightest));
+}
+
+span.red {
+  color: light-dark(var(--red-sangria-dark), var(--red-chalk));
+}
+
+span.orange {
+  color: light-dark(var(--orange-fresh-dark), var(--orange-terracotta));
+}
+
+span.yellow {
+  color: light-dark(var(--yellow-mustard-dark), var(--yellow-golden));
+}
+
+span.chartreuse {
+  color: light-dark(var(--chartreuse-lime-dark), var(--chartreuse-spring));
+}
+
+span.green {
+  color: light-dark(var(--green-copper-dark), var(--green-lichen));
+}
+
+span.aqua {
+  color: light-dark(var(--aqua-turquoise-dark), var(--aqua-normandy));
+}
+
+span.cyan {
+  color: light-dark(var(--cyan-summer-dark), var(--cyan-scandinavian));
+}
+
+span.azure {
+  color: light-dark(var(--azure-capri-dark), var(--azure-maya));
+}
+
+span.blue {
+  color: light-dark(var(--blue-door-dark), var(--blue-shipwreck));
+}
+
+span.violet {
+  color: light-dark(var(--violet-mauve-dark), var(--violet-lavender));
+}
+
+span.magenta {
+  color: light-dark(var(--magenta-doll-dark), var(--magenta-orchid));
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100vw;
+  }
+}
