@@ -8,10 +8,11 @@
   }
 }
 
-* {
-  filter: inherit;
-}
-
-body {
+a,
+code,
+em,
+h1,
+span {
+  color: light-dark(var(--pink-flamingo-dark), var(--pink-flamingo)) !important;
   filter: hue-rotate(0deg);
 }
