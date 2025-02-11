@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: SSH
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        with:
+          host: ${{ secrets.HOST }}
+          user: ${{ secrets.USER }}
+          pass: ${{ secrets.PASS }}
+          first_ssh: |
+            rm -rf ./home/*
+            mkdir -p ./home/src/
+          scp: |
+            ./src/* => ./home/src/
+            ./index.html => ./home/
