@@ -86,10 +86,18 @@ const eggs = [
     id: "rainbow",
     trigger: ["rainbow", "true"],
     implementation: () => {
-      const body = document.body;
+      const elements = [
+        ...document.querySelectorAll("a[href]"),
+        ...document.querySelectorAll("code"),
+        ...document.querySelectorAll("em"),
+        ...document.querySelectorAll("h1"),
+        ...document.querySelectorAll("span"),
+      ];
 
       addStylesheet("rainbow");
-      addAnimation(body, "Rainbow", "infinite", "6s", "linear");
+      elements.forEach((element) =>
+        addAnimation(element, "Rainbow", "infinite", "3s", "linear")
+      );
     },
   },
 ];
