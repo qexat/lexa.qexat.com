@@ -129,3 +129,11 @@ span.magenta {
     width: 100vw;
   }
 }
+
+#switch-to-sans-serif {
+  display: inline;
+}
+
+#switch-to-monospace {
+  display: none;
+}
