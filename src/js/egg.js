@@ -82,24 +82,6 @@ const eggs = [
       addAnimation(body, "Blink", "infinite", "0.15s", "ease-in-out");
     },
   },
-  {
-    id: "rainbow",
-    trigger: ["rainbow", "true"],
-    implementation: () => {
-      const elements = [
-        ...document.querySelectorAll("a[href]"),
-        ...document.querySelectorAll("code"),
-        ...document.querySelectorAll("em"),
-        ...document.querySelectorAll("h1"),
-        ...document.querySelectorAll("span"),
-      ];
-
-      addStylesheet("rainbow");
-      elements.forEach((element) =>
-        addAnimation(element, "Rainbow", "infinite", "3s", "linear")
-      );
-    },
-  },
 ];
 
 /**
