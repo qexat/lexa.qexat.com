@@ -21,69 +21,159 @@
   <body>
     <main>
       <h1>qexat</h1>
-      <section>
-        <h2>about me</h2>
-        <p>hello :)</p>
-        <p>
-          my name is <em>Clarisse</em>, but people commonly call me
-          <em>lexa</em>. you can use my name (preferred), <code>they</code> or
-          <code>it</code> pronouns to refer to me. i am a student in computer
-          science speaking <span class="blue">french</span> and
-          <span class="cyan">english</span>. i like
-          <span class="red">abstract mathematics</span>,
-          <span class="yellow">linguistics</span>,
-          <span class="violet">music</span> and
-          <span class="aqua">graphic design</span>.
-        </p>
-      </section>
-      <section>
-        <h2>socials</h2>
-        <ul>
-          <li><a href="https://bsky.app/profile/qexat.com">bluesky</a></li>
-          <li><a href="https://github.com/qexat">github</a></li>
-          <li>mail: contact {at} {this domain}</li>
-          <li><a href="https://soundcloud.com/qexat">soundcloud</a></li>
-          <li><a href="https://youtube.com/@qexat">youtube</a></li>
-        </ul>
+      <section id="about-me">
+        <details open>
+          <summary>
+            <h2>about me</h2>
+          </summary>
+          <p>Hello :)</p>
+          <p>
+            My name is <em>Clarisse</em>, but people commonly call me
+            <em>lexa</em>. You can use my name (preferred), <code>they</code> or
+            <code>it</code> pronouns to refer to me. I am a student in computer
+            science speaking <strong>french</strong> and
+            <strong>english</strong>. I like <strong>category theory</strong>,
+            <strong>linguistics</strong>, <strong>music</strong> and
+            <strong>graphic design</strong>.
+          </p>
+        </details>
       </section>
 
-      <section>
-        <h2>cool people websites</h2>
-        <small>(ordered lexicographically)</small>
-        <ul>
-          <li><a href="https://www.akhil.cc/">akhil indurti</a></li>
-          <li>
-            <a href="https://fasterthanli.me/">amos wenger (fasterthanlime)</a>
-          </li>
-          <li><a href="https://stuffwithstuff.com/">bob nystrom</a></li>
-          <li>
-            <a href="https://emmatyping.dev/">emma harper smith (emmatyping)</a>
-          </li>
-          <li><a href="https://slavfox.space/">fox</a></li>
-          <li><a href="https://acegikmo.com/">freya holmér (acegikmo)</a></li>
-          <li><a href="https://thephd.dev/">jeanheyd meneide (thephd)</a></li>
-          <li>
-            <a href="https://palaiologos.rocks/"
-              >kamila szewczyk (palaiologos)</a
-            >
-          </li>
-          <li><a href="https://lpil.uk/">louis pilfold</a></li>
-          <li><a href="https://melody.codes/">melody</a></li>
-          <li>
-            <a href="https://simon.peytonjones.org/">simon peyton jones</a>
-          </li>
-        </ul>
+      <section id="projects">
+        <details open>
+          <summary>
+            <h2>projects</h2>
+          </summary>
+
+          <div>
+            <h3>Lexie</h3>
+            <p>
+              Lexie is a programming language inspired from
+              <a
+                href="https://ocaml.org"
+                title="Open the home page of OCaml's website"
+                >OCaml</a
+              >
+              and
+              <a
+                href="https://rocq-prover.org"
+                title="Open the home page of Rocq's website"
+                >Rocq</a
+              >. Its type system is based on the
+              <a
+                href="https://en.wikipedia.org/wiki/Calculus_of_constructions"
+                title="Open the Wikipedia article on the Calculus of Constructions"
+                >Calculus of Constructions</a
+              >
+              type theory, and as such, it is
+              <a
+                href="https://en.wikipedia.org/wiki/Dependent_type"
+                title="Open the Wikipedia article on dependent types"
+                >dependently-typed</a
+              >.
+            </p>
+            <p>
+              I have not formalized the grammar, so there is no example snippet
+              yet.
+            </p>
+            <footer>
+              <p>
+                Link:
+                <a
+                  href="https://github.com/qexat/lexie"
+                  title="Open the project repository on GitHub"
+                  >https://github.com/qexat/lexie</a
+                >
+              </p>
+            </footer>
+          </div>
+        </details>
+      </section>
+
+      <section id="socials">
+        <details>
+          <summary>
+            <h2>socials</h2>
+          </summary>
+          <ul>
+            <li>
+              <a
+                href="https://bsky.app/profile/qexat.com"
+                title="Open my Bluesky profile"
+                >Bluesky</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/qexat" title="Open my GitHub profile"
+                >Github</a
+              >
+            </li>
+            <li>mail: contact {at} {this domain}</li>
+            <li>
+              <a
+                href="https://soundcloud.com/qexat"
+                title="Open my Soundcloud profile"
+                >Soundcloud</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://youtube.com/@qexat"
+                title="Open my YouTube channel"
+                >YouTube</a
+              >
+            </li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="cool-people">
+        <details>
+          <summary>
+            <h2>cool people</h2>
+          </summary>
+
+          <small>(ordered lexicographically)</small>
+          <ul>
+            <li><a href="https://www.akhil.cc/">akhil indurti</a></li>
+            <li>
+              <a href="https://fasterthanli.me/"
+                >amos wenger (fasterthanlime)</a
+              >
+            </li>
+            <li><a href="https://stuffwithstuff.com/">bob nystrom</a></li>
+            <li>
+              <a href="https://emmatyping.dev/"
+                >emma harper smith (emmatyping)</a
+              >
+            </li>
+            <li><a href="https://slavfox.space/">fox</a></li>
+            <li><a href="https://acegikmo.com/">freya holmér (acegikmo)</a></li>
+            <li><a href="https://thephd.dev/">jeanheyd meneide (thephd)</a></li>
+            <li>
+              <a href="https://palaiologos.rocks/"
+                >kamila szewczyk (palaiologos)</a
+              >
+            </li>
+            <li><a href="https://lpil.uk/">louis pilfold</a></li>
+            <li><a href="https://melody.codes/">melody</a></li>
+            <li>
+              <a href="https://simon.peytonjones.org/">simon peyton jones</a>
+            </li>
+          </ul>
+        </details>
       </section>
       <footer>
         <p>
           the source code of this website can be found
           <a href="https://github.com/qexat/qexat.com" target="_blank">here</a>.
-          <span id="switch-to-sans-serif"
-            ><a href="?font=sans-serif">switch</a> to sans-serif.</span
-          >
-          <span id="switch-to-monospace"
-            ><a href="/">switch</a> to monospace.</span
-          >
+        </p>
+        <p>
+          <strong>bold</strong>
+          <em>italic</em>
+          <u>underlined</u>
+          <small>small</small>
+          <code>code</code>
         </p>
       </footer>
     </main>
