@@ -100,13 +100,6 @@ const eggs = [
       );
     },
   },
-  {
-    id: "sans_serif_font",
-    trigger: ["font", "sans-serif"],
-    implementation: () => {
-      addStylesheet("sans_serif");
-    },
-  },
 ];
 
 /**
