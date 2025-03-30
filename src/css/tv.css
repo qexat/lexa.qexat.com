@@ -1,5 +1,5 @@
 :root {
-  --crt-line-height: 4px;
+  --tv-line-height: 4px;
 }
 
 @keyframes LineMoving {
@@ -8,7 +8,7 @@
   }
 
   100% {
-    background-position-y: var(--crt-line-height);
+    background-position-y: var(--tv-line-height);
   }
 }
 
@@ -49,9 +49,17 @@
 }
 
 body {
-  background-size: 100% var(--crt-line-height) !important;
+  background-size: 100% var(--tv-line-height) !important;
   background-repeat: repeat-y !important;
   backdrop-filter: blur(1px);
   text-shadow: 0 0 1.5px
     light-dark(var(--pink-flamingo-darker), var(--pink-flamingo-lighter));
+}
+
+#enable-tv-link {
+  display: none;
+}
+
+#disable-tv-link {
+  display: block;
 }

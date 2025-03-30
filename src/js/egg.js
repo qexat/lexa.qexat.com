@@ -72,12 +72,12 @@ function addAnimation(
  */
 const eggs = [
   {
-    id: "crt",
-    trigger: ["display", "crt"],
+    id: "tv",
+    trigger: ["display", "tv"],
     implementation: () => {
       const body = document.body;
 
-      addStylesheet("crt");
+      addStylesheet("tv");
       addAnimation(body, "LineMoving", "infinite", "0.2s", "ease-in-out");
       addAnimation(body, "Blink", "infinite", "0.15s", "ease-in-out");
     },

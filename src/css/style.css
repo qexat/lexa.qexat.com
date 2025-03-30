@@ -223,6 +223,10 @@ main > footer {
     light-dark(var(--pink-begonia-lighter), var(--pink-begonia-darker));
 }
 
+#disable-tv-link {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   main {
     width: 100vw;
