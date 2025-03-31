@@ -1,8 +1,16 @@
 /**
+ * @typedef {Object} EggTrigger
+ * @property {string} selectors
+ * @property {keyof HTMLElementEventMap} type
+ * @property {(currentValue: string | null) => string} setter
+ * @property {boolean} preventDefault
+ */
+/**
  * @typedef {Object} Egg
  * @property {string} id
- * @property {[string, string]} trigger
- * @property {() => void} implementation
+ * @property {string} key
+ * @property {EggTrigger} trigger
+ * @property {(value: string) => void} implementation
  */
 
 /**
@@ -12,58 +20,26 @@
  */
 function addStylesheet(name) {
   const link = document.createElement("link");
-  link.type = "text/css";
-  link.rel = "stylesheet";
-  link.href = `src/css/${name}.css`;
+  link.setAttribute("type", "text/css");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("href", `src/css/${name}.css`);
+  link.id = `style-egg-${name}`;
 
   const head = document.querySelector("head");
   head.appendChild(link);
 }
 
 /**
- * Add an animation to the given `element`.
- * @param {HTMLElement} element
+ * Remove a stylesheet from the page.
  * @param {string} name
- * @param {string} iteration_count
- * @param {string} duration
- * @param {string} timing_function
+ * @returns {void}
  */
-function addAnimation(
-  element,
-  name,
-  iteration_count,
-  duration,
-  timing_function
-) {
-  /**
-   * Add an item to a property which value is a list in a string.
-   * @param {string} property
-   * @param {string} item
-   * @returns {string}
-   */
-  const value_append = (property, item) => {
-    if (property !== "") {
-      property += ", ";
-    }
+function removeStylesheet(name) {
+  const link = document.querySelector(`link#style-egg-${name}`);
 
-    property += item;
-
-    return property;
-  };
-
-  element.style.animationName = value_append(element.style.animationName, name);
-  element.style.animationIterationCount = value_append(
-    element.style.animationIterationCount,
-    iteration_count
-  );
-  element.style.animationDuration = value_append(
-    element.style.animationDuration,
-    duration
-  );
-  element.style.animationTimingFunction = value_append(
-    element.style.animationTimingFunction,
-    timing_function
-  );
+  if (link !== null) {
+    link.remove();
+  }
 }
 
 /**
@@ -73,39 +49,62 @@ function addAnimation(
 const eggs = [
   {
     id: "tv",
-    trigger: ["display", "tv"],
-    implementation: () => {
-      const body = document.body;
-
-      addStylesheet("tv");
-      addAnimation(body, "LineMoving", "infinite", "0.2s", "ease-in-out");
-      addAnimation(body, "Blink", "infinite", "0.15s", "ease-in-out");
+    key: "tv",
+    trigger: {
+      type: "click",
+      selectors: "#toggle-tv",
+      setter: (currentValue) => {
+        if (currentValue === "enabled") {
+          return "disabled";
+        } else {
+          return "enabled";
+        }
+      },
+      preventDefault: true,
+    },
+    implementation: (value) => {
+      if (value === "enabled") {
+        addStylesheet("tv");
+      } else {
+        removeStylesheet("tv");
+      }
     },
   },
 ];
 
 /**
- * Activate eggs based on the URL search parameters.
- * @param {URLSearchParams} parameters
+ * Initialize easter eggs based on local storage.
  */
-function activateEggs(parameters) {
-  eggs.forEach(({ id, trigger, implementation }) => {
-    const [key, value] = trigger;
+function initEggs() {
+  eggs.forEach(({ id, key, trigger, implementation }) => {
+    const triggerElement = document.querySelector(trigger.selectors);
+    const value = localStorage.getItem(key);
 
-    if (parameters.get(key) === value) {
-      console.log(`Easter egg '${id}' enabled.`);
-      implementation();
+    if (triggerElement !== null) {
+      triggerElement.addEventListener(trigger.type, (event) => {
+        if (trigger.preventDefault) {
+          event.preventDefault();
+        }
+
+        const newValue = trigger.setter(localStorage.getItem(key));
+        localStorage.setItem(key, newValue);
+        implementation(newValue);
+      });
     }
+
+    if (value !== null) {
+      implementation(value);
+    }
+
+    console.log(`Easter egg '${id}' initialized.`);
   });
 }
 
 /**
  * Entry point of the script.
- * @param {Window} window
  */
-function main(window) {
-  const parameters = new URLSearchParams(window.location.search);
-  activateEggs(parameters);
+function main() {
+  initEggs();
 }
 
-main(window);
+main();

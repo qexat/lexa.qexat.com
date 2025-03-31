@@ -54,12 +54,8 @@ body {
   backdrop-filter: blur(1px);
   text-shadow: 0 0 1.5px
     light-dark(var(--pink-flamingo-darker), var(--pink-flamingo-lighter));
-}
-
-#enable-tv-link {
-  display: none;
-}
-
-#disable-tv-link {
-  display: block;
+  animation-name: LineMoving, Blink;
+  animation-iteration-count: infinite, infinite;
+  animation-duration: 0.2s, 0.15s;
+  animation-timing-function: ease-in-out, ease-in-out;
 }

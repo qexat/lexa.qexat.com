@@ -22,10 +22,18 @@
     <main>
       <h1>qexat</h1>
       <div>
-        <p id="enable-tv-link">
-          Switch on <a href="?display=tv">television</a>.
+        <p>
+          Toggle the
+          <!-- We want this to look like a link, but it is semantically a button. -->
+          <a
+            href="#toggle-tv"
+            id="toggle-tv"
+            role="button"
+            aria-label="Click to toggle the television."
+            title="Toggle the television"
+            >television</a
+          >.
         </p>
-        <p id="disable-tv-link">Switch off <a href="/">television</a>.</p>
       </div>
       <section id="about-me">
         <details open>
