@@ -216,6 +216,11 @@ span.magenta {
 details > summary {
   list-style: none;
   cursor: pointer;
+
+  /* Support for Safari */
+  &::-webkit-details-marker {
+    content: "";
+  }
 }
 
 main > footer {
