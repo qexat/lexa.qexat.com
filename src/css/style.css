@@ -169,50 +169,6 @@ a:hover {
   color: light-dark(var(--pink-fuschia-darkest), var(--pink-flamingo-lightest));
 }
 
-span.red {
-  color: light-dark(var(--red-sangria-dark), var(--red-chalk));
-}
-
-span.orange {
-  color: light-dark(var(--orange-fresh-dark), var(--orange-terracotta));
-}
-
-span.yellow {
-  color: light-dark(var(--yellow-mustard-dark), var(--yellow-golden));
-}
-
-span.chartreuse {
-  color: light-dark(var(--chartreuse-lime-dark), var(--chartreuse-spring));
-}
-
-span.green {
-  color: light-dark(var(--green-copper-dark), var(--green-lichen));
-}
-
-span.aqua {
-  color: light-dark(var(--aqua-turquoise-dark), var(--aqua-normandy));
-}
-
-span.cyan {
-  color: light-dark(var(--cyan-summer-dark), var(--cyan-scandinavian));
-}
-
-span.azure {
-  color: light-dark(var(--azure-capri-dark), var(--azure-maya));
-}
-
-span.blue {
-  color: light-dark(var(--blue-door-dark), var(--blue-shipwreck));
-}
-
-span.violet {
-  color: light-dark(var(--violet-mauve-dark), var(--violet-lavender));
-}
-
-span.magenta {
-  color: light-dark(var(--magenta-doll-dark), var(--magenta-orchid));
-}
-
 details > summary {
   list-style: none;
   cursor: pointer;
