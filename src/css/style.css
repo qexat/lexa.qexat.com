@@ -162,10 +162,6 @@ a:visited {
 }
 
 a:hover {
-  background-color: light-dark(
-    var(--pink-flamingo-lightest),
-    var(--pink-begonia-darkest)
-  );
   color: light-dark(var(--pink-fuschia-darkest), var(--pink-flamingo-lightest));
 }
 
