@@ -21,8 +21,8 @@ jobs:
           pass: ${{ secrets.PASS }}
           first_ssh: |
             rm ./home/index.html
-            rm ./home/src/css/**
-            rm ./home/src/js/**
+            rm -rf ./home/src/css/**
+            rm -rf ./home/src/js/**
 
           scp: |
             ./src/css/* => ./home/src/css/
