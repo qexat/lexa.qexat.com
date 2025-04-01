@@ -1,0 +1,49 @@
+@import url("/src/css/colors.css");
+@import url("https://fonts.bunny.net/css?family=fragment-mono:400");
+
+:root {
+  color-scheme: light dark;
+
+  --main-font: "Fragment Mono", monospace;
+
+  --important-text-color: light-dark(
+    var(--pink-flamingo-dark),
+    var(--pink-flamingo)
+  );
+  --emphasized-text-color: light-dark(
+    var(--pink-flamingo-dark),
+    var(--pink-flamingo-light)
+  );
+  --header-marker-color: light-dark(
+    var(--pink-begonia),
+    var(--pink-begonia-dark)
+  );
+  --marker-color: var(--pink-begonia-dark);
+
+  --h1-prefix: "#";
+  --h2-prefix: "##";
+  --h3-prefix: "###";
+  --h4-prefix: "####";
+  --h5-prefix: "#####";
+  --h6-prefix: "######";
+  --bold-opener: "*";
+  --bold-closer: "*";
+  --italic-opener: "/";
+  --italic-closer: "/";
+  --underlined-opener: "_";
+  --underlined-closer: "_";
+  --small-opener: "%";
+  --small-closer: "%";
+  --code-opener: "[";
+  --code-closer: "]";
+  --code-block-opener: "[[";
+  --code-block-closer: "]]";
+  --custom-opener-prefix: "$";
+  --custom-opener-suffix: "{";
+  --custom-closer: "}";
+}
+
+* {
+  box-sizing: inherit;
+  line-height: 1.4em;
+}
