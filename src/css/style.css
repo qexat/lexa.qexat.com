@@ -42,7 +42,8 @@ h5,
 h6,
 li,
 p,
-small {
+small,
+button {
   font-family: "Fragment Mono", monospace;
 }
 
@@ -153,7 +154,49 @@ code {
   }
 }
 
-a {
+pre {
+  & > code {
+    display: block;
+    padding: 1em;
+    border-color: light-dark(
+      var(--pink-begonia-light),
+      var(--pink-begonia-dark)
+    );
+
+    &::before {
+      content: "[[\00000a";
+    }
+
+    &::after {
+      content: "\00000a]]";
+    }
+  }
+
+  &.language-lumul {
+    & > code {
+      &::before {
+        content: "[[lumul\00000a";
+      }
+
+      & span.token-header {
+        font-weight: bold;
+        color: var(--pink-flamingo);
+      }
+    }
+  }
+}
+
+span.custom {
+  &::before {
+    content: "$" attr(custom-name) "{";
+  }
+  &::after {
+    content: "}";
+  }
+}
+
+a,
+button {
   color: light-dark(var(--azure-capri-dark), var(--azure-maya));
 }
 
@@ -161,8 +204,17 @@ a:visited {
   color: light-dark(var(--violet-mauve-dark), var(--violet-lavender));
 }
 
-a:hover {
+a:hover,
+button:hover {
   color: light-dark(var(--pink-fuschia-darkest), var(--pink-flamingo-lightest));
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-size: 1em;
+  text-decoration: underline;
+  background-color: transparent;
 }
 
 details > summary {

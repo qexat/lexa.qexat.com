@@ -22,7 +22,7 @@ function addStylesheet(name) {
   const link = document.createElement("link");
   link.setAttribute("type", "text/css");
   link.setAttribute("rel", "stylesheet");
-  link.setAttribute("href", `src/css/${name}.css`);
+  link.setAttribute("href", `/src/css/${name}.css`);
   link.id = `style-egg-${name}`;
 
   const head = document.querySelector("head");
