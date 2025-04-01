@@ -217,16 +217,6 @@ button {
   background-color: transparent;
 }
 
-details > summary {
-  list-style: none;
-  cursor: pointer;
-
-  /* Support for Safari */
-  &::-webkit-details-marker {
-    content: "";
-  }
-}
-
 main > footer {
   border-top: 2px solid
     light-dark(var(--pink-begonia-lighter), var(--pink-begonia-darker));
