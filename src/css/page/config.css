@@ -1,0 +1,12 @@
+:root {
+  --background-base-lowest: light-dark(
+    var(--pink-flamingo-lightest),
+    var(--pink-flamingo-darkest)
+  );
+  --line-separator-style: 2px solid
+    light-dark(var(--pink-begonia-lighter), var(--pink-begonia-darker));
+}
+
+* {
+  animation-composition: accumulate;
+}

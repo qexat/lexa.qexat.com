@@ -1,0 +1,44 @@
+@import url("/src/css/page/config.css");
+
+html,
+body {
+  margin: 0 auto;
+  height: 100%;
+}
+
+body {
+  width: 50%;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--background-base-lowest);
+}
+
+header {
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 1.5em;
+  border-bottom: var(--line-separator-style);
+}
+
+main {
+  width: 100%;
+}
+
+header > h1 {
+  color: var(--important-text-color);
+}
+
+main > footer {
+  border-top: var(--line-separator-style);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 1.5em;
+    width: 100%;
+  }
+}
