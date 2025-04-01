@@ -20,8 +20,11 @@ jobs:
           user: ${{ secrets.USER }}
           pass: ${{ secrets.PASS }}
           first_ssh: |
-            rm -rf ./home/*
-            mkdir -p ./home/src/
+            rm ./home/index.html
+            rm ./home/src/css/**
+            rm ./home/src/js/**
+
           scp: |
-            ./src/* => ./home/src/
+            ./src/css/* => ./home/src/css/
+            ./src/js/* => ./home/src/js/
             ./index.html => ./home/
