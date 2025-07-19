@@ -37,6 +37,13 @@ main > footer {
   border-top: var(--line-separator-style);
 }
 
+.important {
+  background-color: var(--background-important);
+  padding: 0.1em 1.5em;
+  border: 2px solid
+    light-dark(var(--yellow-mustard), var(--yellow-mustard-light));
+}
+
 @media screen and (max-width: 768px) {
   body {
     padding: var(--half-padding);

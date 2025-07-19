@@ -3,6 +3,14 @@
     var(--pink-flamingo-lightest),
     var(--pink-flamingo-darkest)
   );
+  --background-base-lower: light-dark(
+    var(--pink-flamingo-lighter),
+    var(--pink-flamingo-darker)
+  );
+  --background-important: light-dark(
+    var(--yellow-mustard-lightest),
+    var(--yellow-mustard-darkest)
+  );
   --line-separator-style: 2px solid
     light-dark(var(--pink-begonia-lighter), var(--pink-begonia-darker));
 
