@@ -7,20 +7,21 @@ body {
 }
 
 body {
-  width: 50%;
-  padding: 3em;
+  width: var(--body-width);
+  padding: var(--large-padding);
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   box-sizing: border-box;
   background-color: var(--background-base-lowest);
+  font-size: var(--font-scaling);
 }
 
 header {
   width: 100%;
   height: fit-content;
-  padding-bottom: 1.5em;
+  padding-bottom: var(--half-padding);
   border-bottom: var(--line-separator-style);
 }
 
@@ -38,7 +39,7 @@ main > footer {
 
 @media screen and (max-width: 768px) {
   body {
-    padding: 1.5em;
+    padding: var(--half-padding);
     width: 100%;
   }
 }

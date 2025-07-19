@@ -5,6 +5,12 @@
   );
   --line-separator-style: 2px solid
     light-dark(var(--pink-begonia-lighter), var(--pink-begonia-darker));
+
+  --body-width: 60vw;
+  --large-padding: 3em;
+  --half-padding: calc(var(--large-padding) / 2);
+
+  --font-scaling: 1.2em;
 }
 
 * {
