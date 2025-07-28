@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: SSH
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        uses: yitianyigexiangfa/ssh-scp-ssh-pipelines@v1.1.5
         with:
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USER }}
