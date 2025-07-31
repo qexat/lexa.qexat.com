@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  width: var(--body-width);
+  width: 100%;
   padding: var(--large-padding);
   display: flex;
   flex-direction: column;
@@ -43,6 +43,12 @@ main > footer {
     light-dark(var(--yellow-mustard), var(--yellow-mustard-light));
 }
 
+@media print {
+  #toggle-tv {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 768px) {
   body {
     padding: var(--half-padding);
@@ -53,5 +59,6 @@ main > footer {
 @media screen and (min-width: 768px) {
   body {
     font-size: var(--font-scaling);
+    width: var(--body-width);
   }
 }
