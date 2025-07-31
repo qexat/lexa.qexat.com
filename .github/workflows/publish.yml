@@ -5,6 +5,7 @@ on:
     paths:
       - "src/**"
       - "index.html"
+      - ".github/workflows/publish.yml"
   workflow_dispatch:
 
 jobs:
@@ -20,8 +21,8 @@ jobs:
           user: ${{ secrets.USER }}
           pass: ${{ secrets.PASS }}
           first_ssh: |
-            rm -rf ./home/*
-            mkdir -p ./home/src/
+            rm -rf ./lexa/*
+            mkdir -p ./lexa/src/
           scp: |
-            ./src/* => ./home/src/
-            ./index.html => ./home/
+            ./src/* => ./lexa/src/
+            ./index.html => ./lexa/
