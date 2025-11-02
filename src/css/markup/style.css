@@ -186,37 +186,3 @@ button {
   text-decoration: underline;
   background-color: transparent;
 }
-
-/* important block */
-
-.important {
-  & h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    &::before {
-      margin-right: 0.5em;
-      color: light-dark(var(--yellow-golden), var(--yellow-golden-dark));
-    }
-  }
-
-  & strong,
-  b,
-  u,
-  em,
-  i,
-  small,
-  code,
-  span.custom {
-    &::before,
-    &::after {
-      color: var(--yellow-golden-dark);
-    }
-  }
-
-  & h2 {
-    color: light-dark(var(--yellow-mustard-dark), var(--yellow-mustard-light));
-  }
-}
