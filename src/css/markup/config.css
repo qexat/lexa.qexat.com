@@ -2,23 +2,23 @@
 @import url("https://fonts.bunny.net/css?family=fragment-mono:400");
 
 :root {
-  color-scheme: light dark;
+  color-scheme: dark dark;
 
   --main-font: "Fragment Mono", monospace;
 
   --important-text-color: light-dark(
-    var(--pink-flamingo-dark),
-    var(--pink-flamingo)
+    var(--chartreuse-dry-dark),
+    var(--chartreuse-dry)
   );
   --emphasized-text-color: light-dark(
-    var(--pink-flamingo-dark),
-    var(--pink-flamingo-light)
+    var(--chartreuse-dry-dark),
+    var(--chartreuse-dry-light)
   );
   --header-marker-color: light-dark(
-    var(--pink-begonia),
-    var(--pink-begonia-dark)
+    var(--chartreuse-dry),
+    var(--chartreuse-dry-dark)
   );
-  --marker-color: var(--pink-begonia-dark);
+  --marker-color: var(--chartreuse-dry-dark);
 
   --h1-prefix: "#";
   --h2-prefix: "##";
@@ -45,5 +45,5 @@
 
 * {
   box-sizing: inherit;
-  line-height: 1.4em;
+  line-height: var(--font-scaling);
 }

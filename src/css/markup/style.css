@@ -14,6 +14,8 @@ p,
 small,
 button {
   font-family: var(--main-font);
+  font-size: var(--font-scaling);
+  text-shadow: 0 0 2px var(--chartreuse-dry);
 }
 
 h1,
@@ -68,11 +70,11 @@ h6::before {
 
 strong,
 b {
-  &::before {
+  &[data-show-brackets]::before {
     content: var(--bold-opener);
   }
 
-  &::after {
+  &[data-show-brackets]::after {
     content: var(--bold-closer);
   }
 }
@@ -81,45 +83,48 @@ em,
 i {
   color: var(--emphasized-text-color);
 
-  &::before {
+  &[data-show-brackets]::before {
     content: var(--italic-opener);
   }
 
-  &::after {
+  &[data-show-brackets]::after {
     content: var(--italic-closer);
   }
 }
 
 u {
-  &::before {
+  &[data-show-brackets]::before {
     content: var(--underlined-opener);
   }
 
-  &::after {
+  &[data-show-brackets]::after {
     content: var(--underlined-closer);
   }
 }
 
 small {
-  &::before {
+  &[data-show-brackets]::before {
     content: var(--small-opener);
   }
 
-  &::after {
+  &[data-show-brackets]::after {
     content: var(--small-closer);
   }
 }
 
 code {
-  color: light-dark(var(--pink-flamingo-darker), var(--pink-flamingo-lighter));
+  color: light-dark(
+    var(--chartreuse-dry-darker),
+    var(--chartreuse-dry-lighter)
+  );
   border: 1px solid var(--gray-dark);
   padding: 0 2px;
   border-radius: 4px;
 
-  &::before {
+  &[data-show-brackets]::before {
     content: var(--code-opener);
   }
-  &::after {
+  &[data-show-brackets]::after {
     content: var(--code-closer);
   }
 }
@@ -129,8 +134,8 @@ pre {
     display: block;
     padding: 1em;
     border-color: light-dark(
-      var(--pink-begonia-light),
-      var(--pink-begonia-dark)
+      var(--chartreuse-dry-light),
+      var(--chartreuse-dry-dark)
     );
 
     &::before {
@@ -167,22 +172,24 @@ span.custom {
 
 a,
 button {
-  color: light-dark(var(--azure-capri-dark), var(--azure-maya));
+  color: light-dark(var(--chartreuse-dry-dark), var(--chartreuse-dry));
 }
 
 a:visited {
-  color: light-dark(var(--violet-mauve-dark), var(--violet-lavender));
+  color: light-dark(var(--chartreuse-dry-dark), var(--chartreuse-dry));
 }
 
 a:hover,
 button:hover {
-  color: light-dark(var(--pink-fuschia-darkest), var(--pink-flamingo-lightest));
+  color: light-dark(
+    var(--chartreuse-dry-darkest),
+    var(--chartreuse-dry-lightest)
+  );
 }
 
 button {
   cursor: pointer;
   border: none;
-  font-size: 1em;
   text-decoration: underline;
   background-color: transparent;
 }

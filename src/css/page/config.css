@@ -1,24 +1,24 @@
 :root {
   --background-base-lowest: light-dark(
-    var(--pink-flamingo-lightest),
-    var(--pink-flamingo-darkest)
+    var(--chartreuse-dry-lightest),
+    var(--chartreuse-dry-darkest)
   );
   --background-base-lower: light-dark(
-    var(--pink-flamingo-lighter),
-    var(--pink-flamingo-darker)
+    var(--chartreuse-dry-lighter),
+    var(--chartreuse-dry-darker)
   );
-  --background-important: light-dark(
-    var(--yellow-mustard-lightest),
-    var(--yellow-mustard-darkest)
-  );
+
   --line-separator-style: 2px solid
-    light-dark(var(--pink-begonia-lighter), var(--pink-begonia-darker));
+    light-dark(
+      var(--chartreuse-spring-lighter),
+      var(--chartreuse-spring-darker)
+    );
 
   --body-width: 60vw;
   --large-padding: 3em;
   --half-padding: calc(var(--large-padding) / 2);
 
-  --font-scaling: 1.2em;
+  --font-scaling: 20px;
 }
 
 * {
