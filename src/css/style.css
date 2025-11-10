@@ -1,0 +1,182 @@
+@import url("https://fonts.bunny.net/css?family=jetbrains-mono:400,700,900");
+
+* {
+  box-sizing: inherit;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --max-width: 896px;
+
+  --red: light-dark(darkred, lightcoral);
+  --orange: light-dark(saddlebrown, lightsalmon);
+  --green: light-dark(darkgreen, lightgreen);
+  --cyan: light-dark(darkcyan, paleturquoise);
+  --blue: light-dark(darkblue, lightskyblue);
+  --magenta: light-dark(darkmagenta, plum);
+  --gray: light-dark(gray, gray);
+
+  --highlight: light-dark(wheat, darkgoldenrod);
+}
+
+html,
+body {
+  margin: 0 auto;
+  height: 100%;
+}
+
+body {
+  background-color: light-dark(lightgray, black);
+  color: light-dark(black, lightgray);
+  max-width: var(--max-width);
+
+  font-family: "JetBrains Mono", monospace;
+  font-weight: normal;
+
+  padding: 5em;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+header,
+footer {
+  margin: 0;
+  font-size: 14pt;
+}
+
+a[href] {
+  color: var(--blue);
+}
+
+a[href]:visited {
+  color: var(--magenta);
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style-position: inside;
+  list-style-type: "* ";
+  font-size: 14pt;
+}
+
+table {
+  margin: 6pt 0;
+  font-size: 14pt;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+}
+
+th,
+td {
+  border: 1px solid var(--gray);
+  padding: 6pt 8pt;
+}
+
+.prompt {
+  &::before {
+    font-weight: bolder;
+    color: var(--green);
+  }
+
+  &.prompt-main::before {
+    content: "# ";
+  }
+
+  &.prompt-cont::before {
+    content: "| ";
+  }
+}
+
+.tok-arg {
+  color: var(--cyan);
+}
+
+.tok-comment {
+  color: var(--gray);
+
+  &::before {
+    content: "(* ";
+  }
+  &::after {
+    content: " *)";
+  }
+}
+
+.tok-field {
+  color: var(--blue);
+}
+
+.tok-fn {
+  font-weight: bold;
+}
+
+.tok-kw {
+  font-weight: bold;
+  color: var(--magenta);
+}
+
+.tok-module {
+  color: var(--red);
+}
+
+.tok-bracket {
+  font-weight: bold;
+}
+
+.tok-op {
+  color: var(--magenta);
+}
+
+.tok-special {
+  color: var(--orange);
+}
+
+.tok-string {
+  color: var(--green);
+}
+
+.tok-type {
+  color: var(--orange);
+}
+
+.tok-user {
+  color: var(--red);
+}
+
+.tok-var {
+  font-weight: normal;
+}
+
+.doc-ref {
+  color: inherit !important;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: inherit !important;
+  }
+}
+
+.def-target:target {
+  background-color: var(--highlight);
+}
+
+@media screen and (max-width: 896px) {
+  body {
+    padding: 1em;
+  }
+}
