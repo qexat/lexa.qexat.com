@@ -36,6 +36,27 @@ body {
 
   padding: 5em;
   box-sizing: border-box;
+
+  background-image: radial-gradient(
+      farthest-corner at 0 0,
+      rgba(232, 124, 179, 0.25),
+      rgba(232, 124, 179, 0.05),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      circle at bottom,
+      rgba(134, 181, 234, 0.25),
+      rgba(134, 181, 234, 0.05),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      circle at 100%,
+      rgba(237, 223, 146, 0.25),
+      rgba(237, 223, 146, 0.05),
+      rgba(255, 255, 255, 0)
+    );
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 h1,
