@@ -23,7 +23,7 @@
 html,
 body {
   margin: 0 auto;
-  height: 100%;
+  height: auto;
 }
 
 body {
@@ -71,6 +71,7 @@ table {
   margin: 6pt 0;
   font-size: 14pt;
   border-collapse: collapse;
+  overflow-x: scroll;
 }
 
 thead th {
