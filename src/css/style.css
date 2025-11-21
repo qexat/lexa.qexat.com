@@ -1,4 +1,4 @@
-@import url("https://fonts.bunny.net/css?family=jetbrains-mono:400,700,900");
+@import url("https://fonts.bunny.net/css?family=jetbrains-mono:400,700,900|gentium-book-basic:400");
 
 * {
   box-sizing: inherit;
@@ -195,6 +195,23 @@ td {
 
 .def-target:target {
   background-color: var(--highlight);
+}
+
+.writing {
+  font-family: "Gentium Book Basic", serif;
+
+  & h1 {
+    font-size: 2em;
+  }
+
+  & p {
+    font-size: 1.4em;
+  }
+
+  & h1,
+  p {
+    margin: 1em 0;
+  }
 }
 
 @media screen and (max-width: 896px) {
