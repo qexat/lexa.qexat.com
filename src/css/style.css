@@ -218,6 +218,10 @@ td {
   }
 }
 
+main.writing {
+  min-height: 100dvh;
+}
+
 @media screen and (max-width: 896px) {
   body {
     padding: 1em;
