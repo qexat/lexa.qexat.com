@@ -24,5 +24,6 @@ jobs:
             rm -rf ./lexa/*
             mkdir -p ./lexa/src/
           scp: |
-            ./src/* => ./lexa/src/
-            ./index.html => ./lexa/
+            ./src/css/* => ./lexa/css/
+            ./src/local/* => ./lexa/local/
+            ./pages/* => ./lexa/
