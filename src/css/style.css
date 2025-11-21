@@ -208,6 +208,10 @@ td {
     font-size: 1.4em;
   }
 
+  & .timestamp {
+    font-style: italic;
+  }
+
   & h1,
   p {
     margin: 1em 0;
