@@ -116,6 +116,8 @@ function getUrlFromBuffer(bufferString) {
       return "https://www.youtube.com/watch?v=DO6seG5_IB8";
     case "aaaaaaaaaaaaaaaaaaaaaaaa":
       return "https://www.youtube.com/watch?v=yBLdQ1a4-JI";
+    case "     ":
+      return "https://www.nytimes.com/games/wordle/index.html";
     default:
       return null;
   }
