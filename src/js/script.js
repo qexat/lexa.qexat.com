@@ -247,6 +247,7 @@ function getActionFromBuffer(bufferString) {
 }
 
 window.addEventListener("keydown", (event) => {
+  // TODO: replace keyCode as it is deprecated
   // escape
   if (event.keyCode === 27) {
     buffer.clear();
