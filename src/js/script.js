@@ -168,6 +168,8 @@ window.addEventListener("keydown", (event) => {
     dynInput.style.color = "var(--green)";
     setTimeout(() => {
       document.location.assign(url);
+      buffer = [];
+      dynInput.style.color = "unset";
     }, 500);
   }
 
