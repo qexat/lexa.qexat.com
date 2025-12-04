@@ -223,6 +223,10 @@ function getActionFromBuffer(bufferString) {
       return Postprocess((data) => "enanthate");
     case "camelcase":
       return Postprocess((data) => "snake_case");
+    case "warning":
+      return Postprocess((data) => "error");
+    case "lexa":
+      return Postprocess((data) => "out of ideas?");
 
     /* -*- Actions -*- */
     case "hello":
