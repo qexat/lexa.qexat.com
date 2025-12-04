@@ -8,12 +8,12 @@ import { Maybe } from "/src/js/maybe.js";
   { {tag: "Goto", url: string}
   | {tag: "Postprocess", fn: PostprocessFunction}
   | {tag: "Alert", message: string}
-  } BufferAction
+  } Action
  */
 
 /**
  * @param {string} url
- * @returns {BufferAction}
+ * @returns {Action}
  */
 function Goto(url) {
   return { tag: "Goto", url };
@@ -21,7 +21,7 @@ function Goto(url) {
 
 /**
  * @param {PostprocessFunction} fn
- * @returns {BufferAction}
+ * @returns {Action}
  */
 function Postprocess(fn) {
   return { tag: "Postprocess", fn };
@@ -29,7 +29,7 @@ function Postprocess(fn) {
 
 /**
  * @param {string} message
- * @returns {BufferAction}
+ * @returns {Action}
  */
 function Alert(message) {
   return { tag: "Alert", message };
@@ -37,8 +37,10 @@ function Alert(message) {
 
 class Buffer {
   constructor() {
-    /** @type {string[]} */
-    this._internal = [];
+    /**
+     * @private
+     * @type {string[]} */
+    this.internal = [];
   }
 
   /**
@@ -46,35 +48,35 @@ class Buffer {
    * @returns {void}
    */
   push(character) {
-    this._internal.push(character.toLowerCase());
+    this.internal.push(character.toLowerCase());
   }
 
   /**
    * @returns {void}
    */
   removeLast() {
-    this._internal.pop();
+    this.internal.pop();
   }
 
   /**
    * @returns {void}
    */
   clear() {
-    this._internal = [];
+    this.internal = [];
   }
 
   /**
    * @returns {boolean}
    */
   isEmpty() {
-    return this._internal.length === 0;
+    return this.internal.length === 0;
   }
 
   /**
    * @returns {string}
    */
   get() {
-    return this._internal.join("");
+    return this.internal.join("");
   }
 }
 
@@ -92,7 +94,7 @@ const baseTip = dynTip.innerHTML;
 /**
  * Determine the action to take given the buffer.
  * @param {string} bufferString
- * @returns {BufferAction}
+ * @returns {Action}
  */
 function getActionFromBuffer(bufferString) {
   switch (bufferString) {
