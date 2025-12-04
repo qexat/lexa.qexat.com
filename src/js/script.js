@@ -1,186 +1,289 @@
-/** @type {string[]} */
-let buffer = [];
+/**
+ * @typedef {(data: string) => string} PostprocessFunction
+ */
 
-let saidHi = false;
+/** @typedef 
+  { {tag: "Goto", url: string}
+  | {tag: "Postprocess", fn: PostprocessFunction}
+  | {tag: "Alert", message: string}
+  } BufferAction
+ */
 
+/**
+ * @param {string} url
+ * @returns {BufferAction}
+ */
+function Goto(url) {
+  return { tag: "Goto", url };
+}
+
+/**
+ * @param {PostprocessFunction} fn
+ * @returns {BufferAction}
+ */
+function Postprocess(fn) {
+  return { tag: "Postprocess", fn };
+}
+
+/**
+ * @param {string} message
+ * @returns {BufferAction}
+ */
+function Alert(message) {
+  return { tag: "Alert", message };
+}
+
+class Buffer {
+  constructor() {
+    /** @type {string[]} */
+    this._internal = [];
+  }
+
+  /**
+   * @param {string} character
+   * @returns {void}
+   */
+  push(character) {
+    this._internal.push(character.toLowerCase());
+  }
+
+  /**
+   * @returns {void}
+   */
+  removeLast() {
+    this._internal.pop();
+  }
+
+  /**
+   * @returns {void}
+   */
+  clear() {
+    this._internal = [];
+  }
+
+  /**
+   * @returns {boolean}
+   */
+  isEmpty() {
+    return this._internal.length === 0;
+  }
+
+  /**
+   * @returns {string}
+   */
+  get() {
+    return this._internal.join("");
+  }
+}
+
+const buffer = new Buffer();
 const dynInput = document.getElementById("dyn-input");
 const dynTip = document.getElementById("dyn-tip");
 const baseTitle = dynInput.innerHTML;
 const baseTip = dynTip.innerHTML;
 
-function getUrlFromBuffer(bufferString) {
+/**
+ * Determine the action to take given the buffer.
+ * @param {string} bufferString
+ * @returns {BufferAction}
+ */
+function getActionFromBuffer(bufferString) {
   switch (bufferString) {
+    /* -*- Redirections -*- */
+
+    // Links
     case "bear":
     case "blog":
-      return "https://qexat.bearblog.dev/blog";
+      return Goto("https://qexat.bearblog.dev/blog");
     case "bsky":
     case "bluesky":
     case "twitter":
     case "microblog":
-      return "https://bsky.app/profile/lesbianmonad.com";
+      return Goto("https://bsky.app/profile/lesbianmonad.com");
     case "kofi":
     case "crowdfunding":
     case "onlyfans":
-    case "of":
     case "mym":
     case "nudes":
     case "porn":
-      return "https://ko-fi.com/qexat";
+      return Goto("https://ko-fi.com/qexat");
     case "codeberg":
     case "forge":
-      return "https://codeberg.org/qexat";
+      return Goto("https://codeberg.org/qexat");
     case "qexat":
-      return "https://qexat.com";
+      return Goto("https://qexat.com");
     case "twitch":
     case "lesbianmonad":
-      return "https://twitch.tv/lesbianmonad";
+      return Goto("https://twitch.tv/lesbianmonad");
     case "discord":
     case "flaaffy":
-      return "https://discord.gg/rfRTUxU9kP";
+      return Goto("https://discord.gg/rfRTUxU9kP");
     case "os":
     case "operating system":
     case "arch":
     case "linux":
-      return "https://endeavouros.com/";
-    /* deprecated */
+      return Goto("https://endeavouros.com/");
+
+    // Deprecated/to change
     case "gh":
     case "github":
-      return "https://github.com/qexat";
+      return Goto("https://github.com/qexat");
     case "source":
     case "src":
-      return "https://github.com/qexat/lexa.qexat.com";
-    /* cool people */
+      return Goto("https://github.com/qexat/lexa.qexat.com");
+
+    // Cool people
     case "akhil":
     case "akhil indurti":
-      return "https://akhil.cc";
+      return Goto("https://akhil.cc");
     case "amos wenger":
     case "fasterthanlime":
-      return "https://fasterthanli.me";
+      return Goto("https://fasterthanli.me");
     case "blueberry":
     case "wren":
-      return "https://blueberrywren.dev";
+      return Goto("https://blueberrywren.dev");
     case "bob nystrom":
     case "stuffwithstuff":
-      return "https://stuffwithstuff.com";
+      return Goto("https://stuffwithstuff.com");
     case "emma":
     case "emma smith":
-      return "https://emmatyping.dev";
+      return Goto("https://emmatyping.dev");
     case "fox":
     case "slavfox":
-      return "https://slavfox.space";
+      return Goto("https://slavfox.space");
     case "freya holmer":
     case "acegikmo":
-      return "https://acegikmo.com";
+      return Goto("https://acegikmo.com");
     case "jeanheyd meneide":
     case "thephd":
-      return "https://thephd.dev";
+      return Goto("https://thephd.dev");
     case "kamila szewczyk":
     case "iczelia":
     case "palaiologos":
-      return "https://iczelia.net";
+      return Goto("https://iczelia.net");
     case "louis pilfold":
     case "lpil":
-      return "https://lpil.uk";
+      return Goto("https://lpil.uk");
     case "lyna":
     case "blooym":
-      return "https://blooym.dev";
+      return Goto("https://blooym.dev");
     case "melody":
-      return "https://melody.codes";
+      return Goto("https://melody.codes");
     case "monomere":
     case "julia":
-      return "https://monomere.cc";
+      return Goto("https://monomere.cc");
     case "ryan":
     case "ryan brewer":
-      return "https://ryanbrewer.dev";
+      return Goto("https://ryanbrewer.dev");
     case "lemmie":
-      return "https://lemmie.art";
+      return Goto("https://lemmie.art");
     case "uakci":
-      return "https://uakci.space";
-    /* easter eggs */
+      return Goto("https://uakci.space");
+
+    // Easter eggs/misc
     case "bds":
     case "israel":
     case "palestine":
     case "boycott":
-      return "https://bdsmovement.net/Guide-to-BDS-Boycott";
+      return Goto("https://bdsmovement.net/Guide-to-BDS-Boycott");
     case "brainmade":
-      return "https://brainmade.org";
+      return Goto("https://brainmade.org");
     case "cat":
-      return "https://en.wikipedia.org/wiki/Category_theory";
+      return Goto("https://en.wikipedia.org/wiki/Category_theory");
     case "job":
-      return "https://www.youtube.com/watch?v=A8LHLbuhS9Y";
+      return Goto("https://www.youtube.com/watch?v=A8LHLbuhS9Y");
     case "ocaml":
-      return "https://ocaml.org";
+      return Goto("https://ocaml.org");
     case "uiua":
-      return "https://uiua.org";
+      return Goto("https://uiua.org");
     case "spotify":
-      return "https://www.youtube.com/watch?v=DO6seG5_IB8";
+      return Goto("https://www.youtube.com/watch?v=DO6seG5_IB8");
     case "aaaaaaaaaaaaaaaaaaaaaaaa":
-      return "https://www.youtube.com/watch?v=yBLdQ1a4-JI";
+      return Goto("https://www.youtube.com/watch?v=yBLdQ1a4-JI");
     case "     ":
-      return "https://www.nytimes.com/games/wordle/index.html";
+      return Goto("https://www.nytimes.com/games/wordle/index.html");
+
+    /* -*- Text replacements -*- */
+    // Info
+    case "pronouns":
+      return Postprocess((data) => "they/she");
+    case "name":
+      return Postprocess((data) => "Clarisse");
+
+    // Funsies
+    case "date":
+      return Postprocess((data) =>
+        new Intl.DateTimeFormat().format(new Date(Date.now()))
+      );
+    case "the meaning of life":
+      return Postprocess((data) => "42");
+    case "password":
+      return Postprocess((data) => "********");
+    case "french":
+      return Postprocess((data) => "fr*nch");
+    case "ester":
+      return Postprocess((data) => "enanthate");
+
+    /* -*- Actions -*- */
+    case "hello":
+      return Alert("hi!");
+
     default:
-      return null;
+      return Postprocess((data) => data.replaceAll(" ", "_"));
   }
 }
 
-function postprocessBuffer(bufferString) {
-  return (
-    bufferString
-      /* info */
-      .replaceAll("pronouns", "they/she")
-      .replaceAll("name", "Clarisse")
-      /* funsies */
-      .replaceAll(
-        "date",
-        new Intl.DateTimeFormat().format(new Date(Date.now()))
-      )
-      .replaceAll("the meaning of life", "42")
-      .replaceAll("password", "********")
-      .replaceAll("french", "fr*nch")
-      .replaceAll("ester", "enanthate")
-      /* misc */
-      .replaceAll(" ", "_")
-  );
-}
-
 window.addEventListener("keydown", (event) => {
+  // escape
   if (event.keyCode === 27) {
-    buffer = [];
-  } else if (event.keyCode === 8) {
-    buffer.pop();
-  } else if (
+    buffer.clear();
+  }
+  // backspace
+  else if (event.keyCode === 8) {
+    buffer.removeLast();
+  }
+  // A-Z or space
+  else if (
     (65 <= event.keyCode && event.keyCode <= 90) ||
     event.keyCode === 32
   ) {
     buffer.push(event.key);
   }
 
-  buffer = buffer.map((s) => s.toLowerCase());
+  const bufferString = buffer.get();
 
-  const bufferString = buffer.join("");
-
-  if (buffer.length > 0) {
-    dynInput.innerHTML = postprocessBuffer(bufferString);
-    dynTip.innerHTML = "Press Escape to cancel.";
-  } else {
+  if (buffer.isEmpty()) {
     dynInput.innerHTML = baseTitle;
     dynTip.innerHTML = baseTip;
+  } else {
+    dynInput.innerHTML = bufferString;
+    dynTip.innerHTML = "Press Escape to cancel.";
   }
 
-  const url = getUrlFromBuffer(bufferString);
+  const action = getActionFromBuffer(bufferString);
 
-  if (url !== null) {
-    dynInput.style.color = "var(--green)";
-    setTimeout(() => {
-      document.location.assign(url);
-      buffer = [];
-      dynInput.style.color = "unset";
-    }, 500);
+  /** @type {PostprocessFunction} */
+  let postprocess = (s) => s;
+
+  switch (action.tag) {
+    case "Goto":
+      dynInput.style.color = "var(--green)";
+      setTimeout(() => {
+        buffer.clear();
+        dynInput.style.color = "unset";
+        document.location.assign(action.url);
+      }, 500);
+      break;
+    case "Postprocess":
+      postprocess = action.fn;
+      break;
+    case "Alert":
+      buffer.clear();
+      alert(action.message);
+      break;
   }
 
-  if (bufferString === "hello" && !saidHi) {
-    alert("hi!");
-    saidHi = true;
-    buffer = [];
+  if (!buffer.isEmpty()) {
+    dynInput.innerHTML = postprocess(bufferString);
   }
 });
