@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "lib": ["es2021", "dom"],
+    "paths": {
+      "/src/js/*": ["./src/js/*"]
+    },
+    "checkJs": true
+  }
+}

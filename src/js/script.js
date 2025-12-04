@@ -1,3 +1,5 @@
+import { Maybe } from "/src/js/maybe.js";
+
 /**
  * @typedef {(data: string) => string} PostprocessFunction
  */
@@ -77,8 +79,13 @@ class Buffer {
 }
 
 const buffer = new Buffer();
-const dynInput = document.getElementById("dyn-input");
-const dynTip = document.getElementById("dyn-tip");
+const dynInput = Maybe.fromNull(document.getElementById("dyn-input")).orThrow(
+  TypeError("unable to fetch dyn-input")
+);
+const dynTip = Maybe.fromNull(document.getElementById("dyn-tip")).orThrow(
+  TypeError("unable to fetch dyn-tip")
+);
+
 const baseTitle = dynInput.innerHTML;
 const baseTip = dynTip.innerHTML;
 
