@@ -146,7 +146,6 @@ function getActionFromBuffer(bufferString) {
     case "stuffwithstuff":
       return Goto("https://stuffwithstuff.com");
     case "emma":
-    case "emma smith":
       return Goto("https://emmatyping.dev");
     case "fox":
     case "slavfox":
@@ -173,7 +172,6 @@ function getActionFromBuffer(bufferString) {
     case "julia":
       return Goto("https://monomere.cc");
     case "ryan":
-    case "ryan brewer":
       return Goto("https://ryanbrewer.dev");
     case "lemmie":
       return Goto("https://lemmie.art");
