@@ -50,6 +50,7 @@ function getUrlFromBuffer(bufferString) {
     case "src":
       return "https://github.com/qexat/lexa.qexat.com";
     /* cool people */
+    case "akhil":
     case "akhil indurti":
       return "https://akhil.cc";
     case "amos wenger":
@@ -61,6 +62,7 @@ function getUrlFromBuffer(bufferString) {
     case "bob nystrom":
     case "stuffwithstuff":
       return "https://stuffwithstuff.com";
+    case "emma":
     case "emma smith":
       return "https://emmatyping.dev";
     case "fox":
@@ -87,6 +89,7 @@ function getUrlFromBuffer(bufferString) {
     case "monomere":
     case "julia":
       return "https://monomere.cc";
+    case "ryan":
     case "ryan brewer":
       return "https://ryanbrewer.dev";
     case "lemmie":
