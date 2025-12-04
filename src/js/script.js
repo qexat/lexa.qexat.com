@@ -221,6 +221,8 @@ function getActionFromBuffer(bufferString) {
       return Postprocess((data) => "fr*nch");
     case "ester":
       return Postprocess((data) => "enanthate");
+    case "camelcase":
+      return Postprocess((data) => "snake_case");
 
     /* -*- Actions -*- */
     case "hello":
