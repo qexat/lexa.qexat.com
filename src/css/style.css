@@ -93,8 +93,13 @@ a[href]:visited {
     padding: 1em;
   }
 
+  #dyn-tip {
+    display: none;
+  }
+
   h1 {
     font-size: 3rem;
+    margin: 0;
   }
 
   p {
