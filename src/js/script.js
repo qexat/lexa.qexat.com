@@ -209,6 +209,9 @@ function getActionFromBuffer(bufferString) {
       return Goto("https://www.youtube.com/watch?v=yBLdQ1a4-JI");
     case "     ":
       return Goto("https://www.nytimes.com/games/wordle/index.html");
+    case "quit":
+    case "exit":
+      return Goto("about:blank");
 
     /* -*- Text replacements -*- */
     // Info
