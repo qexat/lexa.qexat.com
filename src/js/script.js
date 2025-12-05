@@ -246,6 +246,16 @@ function getActionFromBuffer(bufferString) {
   }
 }
 
+if ("virtualKeyboard" in navigator) {
+  // @ts-ignore
+  navigator.virtualKeyboard.overlaysContent = true;
+
+  window.addEventListener("dblclick", () => {
+    // @ts-ignore
+    navigator.virtualKeyboard.show();
+  });
+}
+
 window.addEventListener("keydown", (event) => {
   // TODO: replace keyCode as it is deprecated
   // escape
