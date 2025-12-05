@@ -239,6 +239,10 @@ function getActionFromBuffer(bufferString) {
       return Postprocess(() => "error");
     case "lexa":
       return Postprocess(() => "out of ideas?");
+    case "emacs":
+      return Postprocess(() => "vim");
+    case "vim":
+      return Postprocess(() => "emacs");
 
     /* -*- Actions -*- */
     case "hello":
