@@ -250,7 +250,7 @@ if ("virtualKeyboard" in navigator) {
   // @ts-ignore
   navigator.virtualKeyboard.overlaysContent = true;
 
-  window.addEventListener("dblclick", () => {
+  document.body.addEventListener("dblclick", () => {
     // @ts-ignore
     navigator.virtualKeyboard.show();
   });
