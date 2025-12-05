@@ -216,29 +216,29 @@ function getActionFromBuffer(bufferString) {
     /* -*- Text replacements -*- */
     // Info
     case "pronouns":
-      return Postprocess((data) => "they/she");
+      return Postprocess(() => "they/she");
     case "name":
-      return Postprocess((data) => "Clarisse");
+      return Postprocess(() => "Clarisse");
 
     // Funsies
     case "date":
-      return Postprocess((data) =>
+      return Postprocess(() =>
         new Intl.DateTimeFormat().format(new Date(Date.now()))
       );
     case "the meaning of life":
-      return Postprocess((data) => "42");
+      return Postprocess(() => "42");
     case "password":
-      return Postprocess((data) => "********");
+      return Postprocess(() => "********");
     case "french":
-      return Postprocess((data) => "fr*nch");
+      return Postprocess(() => "fr*nch");
     case "ester":
-      return Postprocess((data) => "enanthate");
+      return Postprocess(() => "enanthate");
     case "camelcase":
-      return Postprocess((data) => "snake_case");
+      return Postprocess(() => "snake_case");
     case "warning":
-      return Postprocess((data) => "error");
+      return Postprocess(() => "error");
     case "lexa":
-      return Postprocess((data) => "out of ideas?");
+      return Postprocess(() => "out of ideas?");
 
     /* -*- Actions -*- */
     case "hello":
