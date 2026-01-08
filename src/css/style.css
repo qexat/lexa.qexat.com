@@ -80,7 +80,7 @@ body {
 }
 
 @media screen and (prefers-color-scheme: dark) {
-  #bg-overlay {
+  #bg {
     background: repeat url("/src/image/bg_tile_dark.png");
   }
 }
