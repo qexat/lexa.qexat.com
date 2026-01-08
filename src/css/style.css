@@ -196,7 +196,7 @@ h1 {
 .box-button {
   font-size: 2em;
   font-family: "Handjet", display;
-  font-variant: small-caps;
+  text-transform: uppercase;
 
   background-color: var(--color-dim);
   border: 2px solid;
