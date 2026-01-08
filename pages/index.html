@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta property="og:title" content="lexa" />
-    <meta property="og:description" content="my little place :P" />
+    <meta property="og:title" content="lexa - home" />
+    <meta property="og:description" content="my little club" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lexa.qexat.com" />
 
@@ -12,34 +12,133 @@
     <link rel="shortcut icon" href="/src/local/icon/favicon.gif" />
     <link rel="stylesheet" href="/src/css/style.css" />
 
-    <script type="module" src="/src/js/script.js" defer></script>
+    <script type="module" src="/src/js/music.js" defer></script>
+    <script type="module" src="/src/js/home.js" defer></script>
 
-    <title>lexa's place</title>
+    <title>lexa's club</title>
   </head>
 
   <body>
-    <header class="writing">
-      <h1 id="dyn-input">lexa</h1>
-      <p class="timestamp" id="dyn-tip">Type something...</p>
+    <div id="bg">
+      <div id="bg-overlay"></div>
+    </div>
+    <audio
+      src="/src/sound/bg_music.ogg"
+      id="bg-music"
+      controls="no"
+      loop
+      hidden
+    ></audio>
+    <header>
+      <h1>lexa</h1>
+      <button id="play-button" data-state="play">&#x23F5;</button>
     </header>
-    <main class="writing" id="main">
-      <p>
-        My name is Clarisse ; lexa is a nickname. I am a former student in
-        Computer Science speaking French and English. I like category theory,
-        linguistics, music and graphic design. I am one of the permanent members
-        of the producer group
-        <a href="https://qexat.com" target="_blank">qexat</a>. I have a
-        <a href="https://qexat.bearblog.dev/blog" target="_blank">blog</a>
-        on Bear, a
-        <a href="https://bsky.app/profile/lesbianmonad.com" target="_blank"
-          >microblog</a
-        >
-        on Bluesky, a
-        <a href="https://ko-fi.com/qexat" target="_blank">crowdfunding page</a>
-        on Ko-Fi and a
-        <a href="https://codeberg.org/qexat" target="_blank">forge</a>
-        on Codeberg.
-      </p>
-    </main>
+    <div class="content-box" id="contents-main">
+      <ul class="menu">
+        <li>
+          <button class="menu-button" id="about-button">about me</button>
+        </li>
+        <li>
+          <button class="menu-button" id="links-button">links</button>
+        </li>
+        <li>
+          <button class="menu-button" id="people-button">cool people</button>
+        </li>
+      </ul>
+      <div class="box" id="infobox">
+        <p id="infobox-text">Focus on a button.</p>
+      </div>
+    </div>
+    <div class="content-box" id="contents-about" hidden>
+      <div class="box">
+        <p>
+          Hi! I'm lexa. I'm 22 years old. I'm a former Computer Science student
+          speaking French and English. I enjoy category theory, graphic design,
+          music and recreational lingustics. I'm one of the permanent members of
+          the group <a href="https://qexat.com">qexat</a>.
+        </p>
+      </div>
+      <button class="box-button go-back">&#x2190; Go back</button>
+    </div>
+    <div class="content-box" id="contents-links" hidden>
+      <ul class="menu">
+        <li>
+          <button
+            class="menu-button external-button"
+            data-href="https://qexat.bearblog.dev/blog"
+          >
+            Bearblog
+          </button>
+        </li>
+        <li>
+          <button
+            class="menu-button external-button"
+            data-href="https://bsky.app/profile/lesbianmonad.com"
+          >
+            Bluesky
+          </button>
+        </li>
+        <li>
+          <button
+            class="menu-button external-button"
+            data-href="https://codeberg.org/qexat"
+          >
+            Codeberg
+          </button>
+        </li>
+        <li>
+          <button
+            class="menu-button external-button"
+            data-href="https://github.com/qexat"
+          >
+            GitHub
+          </button>
+        </li>
+      </ul>
+      <button class="box-button go-back">&#x2190; Go back</button>
+    </div>
+    <div class="content-box" id="contents-people" hidden>
+      <div class="box">
+        <p>akhil: <a href="https://akhil.cc">https://akhil.cc</a></p>
+        <p>
+          amos wenger:
+          <a href="https://fasterthanli.me">https://fasterthanli.me</a>
+        </p>
+        <p>
+          blueberry wren:
+          <a href="https://blueberrywren.dev">https://blueberrywren.dev</a>
+        </p>
+        <p>
+          bob nystrom:
+          <a href="https://stuffwithstuff.com">https://stuffwithstuff.com</a>
+        </p>
+        <p>
+          emma smith:
+          <a href="https://emmatyping.dev">https://emmatyping.dev</a>
+        </p>
+        <p>fox: <a href="https://slavfox.space">https://slavfox.space</a></p>
+        <p>
+          freya holmér: <a href="https://acegikmo.com">https://acegikmo.com</a>
+        </p>
+        <p>
+          jeanheyd meneide: <a href="https://thephd.dev">https://thephd.dev</a>
+        </p>
+        <p>
+          kamila szewczyk: <a href="https://iczelia.net">https://iczelia.net</a>
+        </p>
+        <p>louis pilfold: <a href="https://lpil.uk">https://lpil.uk</a></p>
+        <p>lyna: <a href="https://blooym.dev/">https://blooym.dev/</a></p>
+        <p>melody: <a href="https://melody.codes">https://melody.codes</a></p>
+        <p>
+          monomere:
+          <a href="https://monomere.github.io">https://monomere.github.io</a>
+        </p>
+        <p>
+          ryan brewer:
+          <a href="https://ryanbrewer.dev">https://ryanbrewer.dev</a>
+        </p>
+      </div>
+      <button class="box-button go-back">&#x2190; Go back</button>
+    </div>
   </body>
 </html>
