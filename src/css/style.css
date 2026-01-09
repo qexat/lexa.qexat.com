@@ -81,12 +81,6 @@ body {
     no-repeat;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-  #bg {
-    background: repeat url("/src/image/bg_tile_dark.png");
-  }
-}
-
 .content-box {
   opacity: 0;
   transition-property: opacity;
@@ -250,6 +244,23 @@ p {
   h1 {
     font-size: 3rem;
     margin: 0;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  #bg {
+    background: repeat url("/src/image/bg_tile_dark.png");
+  }
+
+  button {
+    border-color: var(--color-invert) var(--color-alt) var(--color-alt)
+      var(--color-invert);
+
+    &:focus-visible,
+    &:focus {
+      border-color: var(--color-alt) var(--color-main) var(--color-main)
+        var(--color-alt);
+    }
   }
 }
 
