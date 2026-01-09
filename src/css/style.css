@@ -122,6 +122,8 @@ button {
   font-family: "Luckiest Guy", display;
   font-weight: normal;
 
+  cursor: pointer;
+
   &:hover,
   &:focus-visible,
   &:focus {
@@ -220,7 +222,6 @@ h1 {
   color: white;
   -webkit-text-stroke: 0;
   text-shadow: none;
-  cursor: pointer;
 
   &:hover,
   &:focus,
