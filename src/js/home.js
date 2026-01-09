@@ -2,14 +2,14 @@ import { getElementByIdOrThrow } from "/src/js/utils.js";
 import { playButton } from "./music.js";
 
 /**
- * @typedef {"main" | "about" | "links" | "people"} contentBoxName
+ * @typedef {"main" | "about" | "links" | "people" | "credits"} contentBoxName
  */
 
 /** @type {contentBoxName} */
 let visibleContentBox = "main";
 
 /** @type {contentBoxName[]} */
-const contentBoxNameList = ["main", "about", "links", "people"];
+const contentBoxNameList = ["main", "about", "links", "people", "credits"];
 
 /** @type {NodeListOf<HTMLButtonElement>} */
 const externalButtonList = document.querySelectorAll("button.external-button");
@@ -34,6 +34,10 @@ const linksButton = getElementByIdOrThrow("links-button");
 /** @type {HTMLButtonElement} */
 // @ts-expect-error
 const peopleButton = getElementByIdOrThrow("people-button");
+
+/** @type {HTMLButtonElement} */
+// @ts-expect-error
+const creditsButton = getElementByIdOrThrow("credits-button");
 
 /**
  *
@@ -86,6 +90,12 @@ makeButtonInfobox(
   infobox,
   peopleButton,
   "Websites of cool people. You should visit them!"
+);
+
+makeButtonInfobox(
+  infobox,
+  creditsButton,
+  "Credits for the various parts of this page."
 );
 
 for (let button of mainMenuButtonList) {
