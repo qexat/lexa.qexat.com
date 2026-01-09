@@ -63,20 +63,21 @@ body {
   animation-duration: 128s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  z-index: -1;
+  z-index: -2;
 
   will-change: transform;
 }
 
 #bg-overlay {
-  position: fixed;
+  position: absolute;
   inset: 0px;
+  z-index: -1;
 
   background: linear-gradient(
-      to bottom,
-      var(--color-main-translucent) 40%,
+      to top,
+      var(--color-main-translucent) 20%,
       var(--color-alt-translucent) 50%,
-      var(--color-main-translucent) 60%
+      var(--color-main-translucent) 80%
     )
     no-repeat;
 }
