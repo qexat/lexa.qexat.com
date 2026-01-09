@@ -19,6 +19,8 @@
   --color-main-translucent: rgba(126, 230, 245, 0.7);
   --color-alt-translucent: rgba(183, 247, 255, 0.7);
   --color-invert-alt-translucent: rgba(51, 108, 116, 0.7);
+
+  --text-stroke-width: 2px;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -106,15 +108,15 @@ header {
     background-image: radial-gradient(circle at top, white, black);
     color: transparent;
     background-clip: text;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: var(--text-stroke-width) black;
   }
 }
 
 button {
   background-color: var(--color-dim);
   color: white;
-  -webkit-text-stroke: 2px black;
-  text-shadow: 0 2px 2px black;
+  -webkit-text-stroke: var(--text-stroke-width) black;
+  text-shadow: 0 var(--text-stroke-width) var(--text-stroke-width) black;
 
   border: 4px solid;
   border-color: var(--color-main) var(--color-invert-alt)
@@ -144,6 +146,7 @@ button {
   width: 48px;
   height: 48px;
   padding: 0;
+  font-size: 1.4em;
 }
 
 .menu {
@@ -236,6 +239,10 @@ p {
 }
 
 @media screen and (max-width: 896px) {
+  :root {
+    --text-stroke-width: 1px;
+  }
+
   body {
     padding: 1em;
   }
