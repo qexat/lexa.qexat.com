@@ -87,12 +87,12 @@ async function fadeOutStop(element, duration) {
 
 playButton.addEventListener("click", async (event) => {
   if (playButton.dataset.state === "play") {
-    playButton.innerHTML = "&#x23F8";
+    playButton.innerHTML = "&#x1D160;&#x23F8;";
     playButton.dataset.state = "pause";
 
     await fadeInStart(bgMusic, 250, 0.7);
   } else if (playButton.dataset.state === "pause") {
-    playButton.innerHTML = "&#x23F5;";
+    playButton.innerHTML = "&#x1D160;&#x23F5;";
     playButton.dataset.state = "play";
 
     await fadeOutStop(bgMusic, 250);
