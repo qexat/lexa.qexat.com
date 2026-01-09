@@ -107,7 +107,7 @@ for (let button of mainMenuButtonList) {
 
 for (let button of externalButtonList) {
   button.addEventListener("click", (event) => {
-    document.location.assign(button.dataset.href);
+    window.open(button.dataset.href, "_blank");
   });
 }
 
