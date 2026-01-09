@@ -122,6 +122,7 @@ button {
   font-family: "Luckiest Guy", display;
   font-weight: normal;
 
+  &:hover,
   &:focus-visible,
   &:focus {
     background-color: var(--color-main);
@@ -221,6 +222,7 @@ h1 {
   text-shadow: none;
   cursor: pointer;
 
+  &:hover,
   &:focus,
   &:focus-within {
     background-color: var(--color-invert);
@@ -261,6 +263,7 @@ p {
     border-color: var(--color-invert) var(--color-alt) var(--color-alt)
       var(--color-invert);
 
+    &:hover,
     &:focus-visible,
     &:focus {
       border-color: var(--color-alt) var(--color-main) var(--color-main)
