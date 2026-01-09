@@ -245,6 +245,11 @@ p {
     font-size: 3rem;
     margin: 0;
   }
+
+  .box,
+  .box-button {
+    font-size: 1.4em;
+  }
 }
 
 @media screen and (prefers-color-scheme: dark) {
