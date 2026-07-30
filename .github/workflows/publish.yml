@@ -4,7 +4,7 @@ on:
       - main
     paths:
       - "src/**"
-      - "index.html"
+      - "pages/**"
       - ".github/workflows/publish.yml"
   workflow_dispatch:
 
@@ -21,8 +21,8 @@ jobs:
           user: ${{ secrets.USER }}
           pass: ${{ secrets.PASS }}
           first_ssh: |
-            rm -rf ./lexa/*
-            mkdir -p ./lexa/src/
+            rm -rf ./www/lexa.qex.at/*
+            mkdir -p ./www/lexa.qex.at/src/
           scp: |
-            ./src/* => ./lexa/src/
-            ./pages/* => ./lexa/
+            ./src/* => ./www/lexa.qex.at/src/
+            ./pages/* => ./www/lexa.qex.at/
