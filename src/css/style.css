@@ -20,15 +20,21 @@
   --light: light-dark(var(--power-green-1), var(--power-green-3));
   --light-dimmer: light-dark(var(--power-green-2), var(--power-green-4));
   --foreground: light-dark(var(--power-green-10), var(--power-green-3));
+}
 
-  --menu-title-font-size: 6rem;
-  --menu-item-font-size: 3rem;
+@media screen and (min-width: 1080px) {
+  :root {
+    --menu-title-font-size: 6rem;
+    --menu-item-font-size: 3rem;
+    --normal-font-size: 1.8rem;
+  }
 }
 
 @media screen and (max-width: 1080px) {
   :root {
-    --menu-title-font-size: 5.6rem;
-    --menu-item-font-size: 2.1rem;
+    --menu-title-font-size: 4rem;
+    --menu-item-font-size: 2rem;
+    --normal-font-size: 1rem;
   }
 }
 
@@ -56,38 +62,14 @@ main {
 
   display: flex;
   align-items: center;
-
-
 }
 
-/* large screens */
-@media screen and (min-width: 768px) {
-  main {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  & li {
-    text-align: end;
-  }
+p {
+  font-size: var(--normal-font-size);
 }
 
-/* small screens */
-@media screen and (max-width: 768px) {
-  main {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  & li {
-    text-align: center;
-  }
-}
-
-p,
-li,
-button {
-  font-size: 1.8rem;
+li {
+  font-size: var(--menu-item-font-size);
 }
 
 h1,
@@ -98,6 +80,7 @@ ul.menu>li {
 }
 
 h1 {
+  text-align: center;
   color: var(--power-green-11);
 
   margin: 0 auto;
@@ -113,10 +96,7 @@ h1 {
 }
 
 section.about-me {
-  width: 50%;
-
   &>h1 {
-    text-align: center;
     margin-bottom: 4rem;
   }
 
@@ -167,5 +147,33 @@ ul.menu {
 
       text-decoration: none;
     }
+  }
+}
+
+/* large screens */
+@media screen and (min-width: 1080px) {
+  main {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  li {
+    text-align: end;
+  }
+}
+
+/* small screens */
+@media screen and (max-width: 1080px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  section.about-me {
+    width: 80%;
+  }
+
+  li {
+    text-align: center;
   }
 }
