@@ -1,41 +1,15 @@
-@import url(https://fonts.bunny.net/css?family=freckle-face:400|gasoek-one:400);
-@import url(https://fonts.bunny.net/css?family=martian-mono:100,200,300,400,500,600,700,800);
+@import url(https://fonts.bunny.net/css?family=host-grotesk:100,200,300,400,500,600,700,800);
+@import url(https://fonts.bunny.net/css?family=charis-sil:100,200,300,400,500,600,700,800);
+@import url(https://fonts.bunny.net/css?family=lilex:100,200,300,400,500,600,700,800);
+@import url(https://fonts.bunny.net/css?family=atkinson-hyperlegible:100,200,300,400,500,600,700,800);
 
 :root {
   color-scheme: light dark;
 
-  --power-green-1: rgb(237, 251, 233);
-  --power-green-2: rgb(206, 245, 194);
-  --power-green-3: rgb(174, 238, 155);
-  --power-green-4: rgb(143, 231, 115);
-  --power-green-5: rgb(111, 225, 76);
-  --power-green-6: rgb(87, 219, 46);
-  --power-green-7: rgb(65, 179, 30);
-  --power-green-8: rgb(51, 140, 24);
-  --power-green-9: rgb(36, 100, 17);
-  --power-green-10: rgb(22, 61, 10);
-  --power-green-11: rgb(8, 22, 4);
+  --color-neutral: default;
+  --color-background: default;
 
-  --primary: light-dark(var(--power-green-6), var(--power-green-9));
-  --light: light-dark(var(--power-green-1), var(--power-green-3));
-  --light-dimmer: light-dark(var(--power-green-2), var(--power-green-4));
-  --foreground: light-dark(var(--power-green-10), var(--power-green-3));
-}
-
-@media screen and (min-width: 1080px) {
-  :root {
-    --menu-title-font-size: 6rem;
-    --menu-item-font-size: 3rem;
-    --normal-font-size: 1.8rem;
-  }
-}
-
-@media screen and (max-width: 1080px) {
-  :root {
-    --menu-title-font-size: 4rem;
-    --menu-item-font-size: 2rem;
-    --normal-font-size: 1rem;
-  }
+  --font-family: 'Host Grotesk', sans-serif;
 }
 
 * {
@@ -45,135 +19,79 @@
 
 html {
   height: 100%;
+  background-color: var(--color-background);
 }
 
 body {
-  background-color: var(--primary);
-  background-image: url("/src/image/dot_dark.png");
-  background-size: 8px 8px;
-  background-blend-mode: screen;
-
-  height: 100%;
   margin: 0 auto;
+  padding: 1em 0;
+  color: var(--color-neutral);
 }
 
-main {
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-}
-
-p {
-  font-size: var(--normal-font-size);
-}
-
-li {
-  font-size: var(--menu-item-font-size);
-}
-
-h1,
-ul.menu>li {
-  font-family: "Gasoek One", sans-serif;
-  text-transform: uppercase;
-  -webkit-text-stroke: 0.2rem var(--power-green-10);
+aside {
+  padding: 0 2em;
+  border: 1px solid gray;
 }
 
 h1 {
-  text-align: center;
-  color: var(--power-green-11);
-
-  margin: 0 auto;
-
-  font-size: var(--menu-title-font-size);
-  -webkit-text-stroke-color: var(--light-dimmer);
-  text-shadow:
-    0.4rem 0 0rem var(--light),
-    0.8rem 0 0rem var(--light),
-    1.2rem 0 0rem var(--light);
-
-  transform: skewY(-5deg);
+  font-weight: 900;
 }
 
-section.about-me {
-  &>h1 {
-    margin-bottom: 4rem;
-  }
+h2 {
+  font-weight: 700;
+}
 
-  &>p {
-    font-family: 'Martian Mono', 'JetBrains Mono', monospace;
-    color: var(--foreground);
+h1,
+h2,
+h3 {
+  font-family: var(--font-family);
+
+  &>a:link {
+    font-size: 0.7rem;
   }
 }
 
-ul.menu {
-  margin: 0;
-  padding: 5rem 0;
+p,
+li,
+button {
+  font-family: var(--font-family);
+}
 
-  text-transform: uppercase;
-  transform-origin: left center;
+a {
+  color: var(--color-primary);
+}
 
-  list-style-type: none;
-
-  &.menu-tight {
-    &>li {
-      margin: 0.2rem 0;
-    }
-  }
+ul.vertical {
+  list-style: none;
+  padding-left: 0;
 
   &>li {
-    margin: 1rem 0;
-    color: var(--light);
+    display: inline;
 
-    font-size: var(--menu-item-font-size);
-
-    text-shadow:
-      0.3rem 0 0rem var(--power-green-11),
-      0.6rem 0 0rem var(--power-green-11),
-      0.9rem 0 0rem var(--power-green-11);
-
-    &:has(a:hover),
-    &:has(a:focus-within) {
-      text-shadow:
-        0.4rem 0 0 var(--light),
-        0.8rem 0 0 var(--light),
-        1.2rem 0 0 var(--light);
-
-      -webkit-text-stroke-color: var(--power-green-11);
-    }
-
-    &>a {
-      color: inherit;
-
-      text-decoration: none;
+    &:not(:nth-of-type(1))::before {
+      content: " · ";
     }
   }
 }
 
-/* large screens */
 @media screen and (min-width: 1080px) {
-  main {
-    flex-direction: row;
-    justify-content: space-around;
+  body {
+    width: calc(100% * 2 / 3);
   }
 
-  li {
-    text-align: end;
+  aside {
+    float: right;
+    width: calc(100% / 4);
   }
 }
 
-/* small screens */
 @media screen and (max-width: 1080px) {
-  main {
-    flex-direction: column;
-    justify-content: center;
+  body {
+    width: 90%;
   }
 
-  section.about-me {
-    width: 80%;
-  }
-
-  li {
-    text-align: center;
+  aside {
+    float: none;
+    width: auto;
   }
 }
