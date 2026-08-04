@@ -95,31 +95,3 @@ ul.vertical {
     width: auto;
   }
 }
-
-/* large screens */
-@media screen and (min-width: 1080px) {
-  main {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  li {
-    text-align: end;
-  }
-}
-
-/* small screens */
-@media screen and (max-width: 1080px) {
-  main {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  section.about-me {
-    width: 80%;
-  }
-
-  li {
-    text-align: center;
-  }
-}
