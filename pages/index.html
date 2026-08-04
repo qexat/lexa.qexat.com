@@ -12,22 +12,115 @@
 
   <link rel="shortcut icon" href="/src/local/icon/favicon.gif" />
   <link rel="stylesheet" href="/src/css/style.css" />
+  <script src="/src/js/script.js" defer></script>
 
-  <title>lexa's club</title>
+  <title>lexa's homepage</title>
 </head>
 
 <body>
-  <main>
-    <header>
-      <h1>LEXA's club</h1>
-    </header>
-    <ul class="menu">
-      <li><a href="about/">about</a></li>
-      <li><a href="links/">links</a></li>
-      <li><a href="friends/">friends</a></li>
-      <li><a href="https://github.com/qexat/lexa.qex.at" target="_blank">source</a></li>
+  <header id="up">
+    <h1>home</h1>
+
+    <ul class="vertical">
+      <li><a href="#about">about</a></li>
+      <li><a href="#socials-and-co">socials & co</a></li>
+      <li><a href="#friends">friends</a></li>
+      <li><a href="#links">links</a></li>
+      <li><a href="#customize">customize</a></li>
     </ul>
+  </header>
+
+  <hr />
+
+  <main>
+    <aside id="customize">
+      <h2>customize <a href="#up">(up)</a></h2>
+
+      <button name="reset-theme" title="reset theme" type="button" onclick="javascript:reset();">reset</button>
+
+      <section id="color">
+        <h3 id="color-title">color</h3>
+
+        <ul class="vertical" aria-labelledby="color-title">
+          <li><button name="set-color-red" title="set color red" type="button"
+              onclick="javascript:setColor('red');">red</button></li>
+          <li><button name="set-color-yellow" title="set color yellow" type="button"
+              onclick="javascript:setColor('yellow');">yellow</button></li>
+          <li><button name="set-color-green" title="set color green" type="button"
+              onclick="javascript:setColor('green');">green</button></li>
+          <li><button name="set-color-cyan" title="set color cyan" type="button"
+              onclick="javascript:setColor('cyan');">cyan</button></li>
+          <li><button name="set-color-blue" title="set color blue" type="button"
+              onclick="javascript:setColor('blue');">blue</button></li>
+          <li><button name="set-color-purple" title="set color purple" type="button"
+              onclick="javascript:setColor('purple');">purple</button></li>
+          <li><button name="set-color-gray" title="set color gray" type="button"
+              onclick="javascript:setColor('gray');">gray</button></li>
+          <li><button name="set-color-random" title="set color random" type="button"
+              onclick="javascript:setColor('random');">random</button></li>
+        </ul>
+      </section>
+
+      <section id="font">
+        <h3 id="font-title">font</h3>
+
+        <ul class="vertical" aria-labelledby="font-title">
+          <li><button name="set-font-sans-serif" title="set font sans-serif" type="button"
+              onclick="javascript:setFont('sansSerif')">sans-serif</button></li>
+          <li><button name="set-font-serif" title="set font serif" type="button"
+              onclick="javascript:setFont('serif')">serif</button></li>
+          <li><button name="set-font-monospace" title="set font monospace" type="button"
+              onclick="javascript:setFont('monospace')">monospace</button></li>
+          <li><button name="set-color-dyslexic" title="set font dyslexic" type="button"
+              onclick="javascript:setFont('dyslexic')">dyslexic</button></li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <section id="about">
+      <h2>about <a href="#up">(up)</a></h2>
+      <p>Hi! I'm lexa. I'm 22 years old. I'm a former computer science student speaking French and English. My main
+        interests are category theory, graphic design, linguistics, and music. I'm one of the permanent members of the
+        group <a href="https://qex.at">qexat</a>.</p>
+    </section>
+    <section id="socials-and-co">
+      <h2>socials & co <a href="#up">(up)</a></h2>
+      <ul class="menu">
+        <li><a href="https://bsky.app/profile/qex.at" title="go to lexa's bluesky page">bluesky</a></li>
+        <li><a href="https://codeberg.org/qexat" title="go to lexa's codeberg page">codeberg</a></li>
+        <li><a href="https://github.com/qexat" title="go to lexa's github page">github</a></li>
+        <li><a href="https://qex.at" target="_blank" title="open qexat's website in a new tab">qexat</a></li>
+      </ul>
+    </section>
+    <section id="friends">
+      <h2>friends <a href="#up">(up)</a></h2>
+      <ul class="menu menu-tight">
+        <li><a href="https://akhil.cc" title="go to akhil's website">akhil</a></li>
+        <li><a href="https://emmatyping.dev" title="go to emma's website">emma</a></li>
+        <li><a href="https://iczelia.net" title="go to iczelia's website">iczelia</a></li>
+        <li><a href="https://ilta.doll.systems" title="go to ilta's website">ilta</a></li>
+        <li><a href="https://jawad-ahmed.dev/" title="go to jawad's website">jawad</a></li>
+        <li><a href="https://melody.codes" title="go to melody's website">melody</a></li>
+        <li><a href="https://monomere.cc" title="go to monomere's website">monomere</a></li>
+        <li><a href="https://ryanbrewer.dev" title="go to ryan's website">ryan</a></li>
+        <li><a href="https://blueberrywren.dev" title="go to wren's website">wren</a></li>
+      </ul>
+    </section>
   </main>
+
+  <hr />
+
+  <footer>
+    <section id="links">
+      <h3 id="links-title">links <a href="#up">(up)</a></h3>
+
+      <ul class="vertical" aria-labelledby="links-title">
+        <li><a href="./">home</a></li>
+      </ul>
+    </section>
+
+  </footer>
 </body>
 
 </html>
